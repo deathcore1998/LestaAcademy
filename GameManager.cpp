@@ -67,6 +67,7 @@ void AGameManager::showGameLoseWidget()
 {
 	stopGameTimer();
 	playerController->SetPause(true);
+	exitGameWidget->SetVisibility(ESlateVisibility::Collapsed);
 	if (gameLose)
 	{
 		gameLoseWidget = CreateWidget<UUserWidget>(GetWorld(), gameLose);
@@ -80,7 +81,7 @@ void AGameManager::showGameWinWidget()
 {
 	ALestaAcademyCharacter* playerRef = Cast<ALestaAcademyCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
 	playerRef->hidingWidgetHP();
-
+	exitGameWidget->SetVisibility(ESlateVisibility::Collapsed);
 	stopGameTimer();
 	playerController->SetPause(true);
 	if (gameWin)
