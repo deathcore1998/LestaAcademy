@@ -45,7 +45,7 @@ ATrapWind::ATrapWind()
 	rotationAngles = {0.f, -90.f, 180.f, 90.f };
 
 	bStandingOnTrap = false;
-	forceWind = 2.1f;
+	forceWind = 1.8f;
 	delayWindChange = 2.f;
 	currentDelayWindChange = 0.f;
 

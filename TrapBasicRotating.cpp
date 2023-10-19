@@ -57,12 +57,6 @@ void ATrapBasicRotating::onCharacterCollisionBegin(UPrimitiveComponent* overlapp
 			FVector launchDirection = playerRef->GetActorLocation() - impactCollision->GetComponentLocation();
 			// При необходимости добавление откидывание вверх, по умолчанию оно 0
 			launchDirection.Z += additionallyRecliningZ;
-			// Чтобы откидывание не было слишком сильным
-
-			if (launchDirection.Z > maximumPushZ)
-			{
-				launchDirection.Z = maximumPushZ;
-			}
 			launchDirection.Normalize();
 			// Применение откидывания
 			playerRef->LaunchCharacter(launchDirection * launchForce, false, false);
